@@ -1,0 +1,39 @@
+C:\Users\MrBer>mysqldump example > example.sql
+
+mysql> CREATE DATABASE sample;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| example            |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sample             |
+| sys                |
++--------------------+
+6 rows in set (0.00 sec)
+
+
+C:\Users\MrBer>mysql sample < example.sql
+
+mysql> use sample;
+Database changed
+mysql> show tables;
++------------------+
+| Tables_in_sample |
++------------------+
+| users            |
++------------------+
+1 row in set (0.00 sec)
+
+C:\Users\MrBer>mysqldump sample > sample.sql
+
+
+
+(по желанию) Ознакомьтесь более подробно с документацией утилиты mysqldump. Создайте дамп единственной таблицы help_keyword базы данных mysql. Причем добейтесь того, чтобы дамп содержал только первые 100 строк таблицы.
+C:\Users\MrBer>mysqldump --opt --where="1 limit 100" mysql help_keyword > help_keyword.sql
+
+
